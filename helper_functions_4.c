@@ -6,7 +6,7 @@
 /*   By: youtakhs <youtakhs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:12:57 by youtakhs          #+#    #+#             */
-/*   Updated: 2024/05/25 00:48:28 by youtakhs         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:57:48 by youtakhs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,24 @@ t_list	*ft_lstnew(int content, int index)
 	return (node);
 }
 
-void	check_if_sorted(t_list *checker)
+void	check_if_sorted(t_list *stack)
 {
-	int	current_nbr;
-	int	next_nbr;
-	int	size;
-	int	indecator;
-
-	size = 0;
-	indecator = 0; 
-	while (checker)
+	while (stack)
 	{
-		current_nbr = checker->content;
-		size++;
-		if (checker->next)
+		if (stack)
 		{
-			next_nbr = checker->next->content;
-			if (current_nbr < next_nbr)
-				indecator++;
+			if(!stack->next)
+				break ;
+			else if (stack->content < stack->next->content)
+				stack = stack->next;
+			else
+				break ;
 		}
-		checker = checker->next;
-	}
-	if ((size + 1) == indecator || size == 1)
-	{
-		ft_lstclear(&checker);
-		exit(0);
+		else
+		{
+			ft_lstclear(&stack);
+			exit(0);
+		}
 	}
 }
 

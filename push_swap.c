@@ -6,7 +6,7 @@
 /*   By: youtakhs <youtakhs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 00:46:50 by youtakhs          #+#    #+#             */
-/*   Updated: 2024/05/29 03:44:54 by youtakhs         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:01:07 by youtakhs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,10 @@ void	sort_3_p2(t_list **stack_a)
 		rotate_a(&(*stack_a));
 	}
 }
+void leaks()
+{
+	system("leaks push_swap");
+}
 
 int	main(int ac, char **av)
 {
@@ -92,4 +96,5 @@ int	main(int ac, char **av)
 	else if (size > 100)
 		sort(&valid_list, &stack_b, 2, 34);
 	ft_lstclear(&valid_list);
+	atexit(leaks);
 }

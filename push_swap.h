@@ -6,15 +6,15 @@
 /*   By: youtakhs <youtakhs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 00:46:42 by youtakhs          #+#    #+#             */
-/*   Updated: 2024/05/29 03:46:48 by youtakhs         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:55:59 by youtakhs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include <limits.h>
 
 typedef struct s_list
